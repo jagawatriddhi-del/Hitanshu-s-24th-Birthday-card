@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riddhi ❤️ Hitanshu</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet"><style>
+body {
+    margin:0;
+    font-family:'Poppins', sans-serif;
+    background:linear-gradient(to bottom,#ffd6e0,#fff);
+    text-align:center;
+}
+
+h1 {
+    font-family:'Great Vibes', cursive;
+    font-size:48px;
+}
+
+.title{
+    animation:fadeZoom 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeZoom{
+    0%{transform:scale(1); opacity:0.8;}
+    100%{transform:scale(1.08); opacity:1;}
+}
+
+.card {
+    background:white;
+    margin:20px auto;
+    padding:20px;
+    border-radius:20px;
+    width:80%;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery img{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+    margin:10px;
+    animation:floatIn 1.5s ease forwards;
+    opacity:0;
+}
+
+@keyframes floatIn{
+    0%{transform:translateY(50px); opacity:0;}
+    60%{transform:translateY(-10px); opacity:1;}
+    100%{transform:translateY(0); opacity:1;}
+}
+
+.gallery img:hover{
+    transform:scale(1.1);
+}
+
+/* hearts */
+.heart{
+    position:fixed;
+    bottom:-10px;
+    color:#ff4d6d;
+    animation:float 5s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);opacity:1}
+    100%{transform:translateY(-100vh);opacity:0}
+}
+
+/* dark mode */
+.dark {
+  background:#1a1a1a;
+  color:#fff;
+}
+
+.dark .card{
+  background:#2a2a2a;
+}
+
+/* typewriter */
+.typewriter{
+  overflow:hidden;
+  border-right:.15em solid pink;
+  white-space:nowrap;
+  animation:typing 3s steps(40,end), blink .75s step-end infinite;
+}
+
+@keyframes typing{
+  from{width:0}
+  to{width:100%}
+}
+
+@keyframes blink{
+  50%{border-color:transparent}
+}
+
+/* popup */
+#popup{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:#fff;
+  padding:20px;
+  border-radius:20px;
+  display:none;
+  box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.dark #popup{
+  background:#333;
+  color:white;
+}
+
+</style></head><body><!-- music --><audio id="music" loop preload="auto">
+  <source src="song.mp3" type="audio/mpeg">
+</audio><button onclick="playMusic()" style="position:fixed;bottom:20px;right:20px;padding:10px 15px;border:none;border-radius:20px;background:#ff4d6d;color:white;cursor:pointer;">
+  press this 👀🎶
+</button><div id="lock">
+<h2>Enter Password 💖</h2>
+<input id="pass" type="password">
+<button onclick="check()">Unlock</button>
+</div><div id="content" style="display:none;"><h1 class="title typewriter">Happy 24th Birthday to My Favorite Human 💗</h1><div class="card gallery">
+<h2>Our Memories 📸</h2>
+<img src="image1.jpg">
+<img src="image2.jpg">
+<img src="image3.jpg">
+<img src="image4.jpg">
+<img src="image5.jpg">
+<img src="image6.jpg">
+<img src="image7.jpg">
+<img src="image8.jpg">
+<img src="image9.jpg">
+<img src="image10.jpg">
+</div><div class="card">
+<h2>Birthday Wish 🎂</h2>
+<p>
+I know you aren't big on birthdays but I'm trying to make it special in whatever way I can and I would love for you to experience even 1% of the love that you give everybody around you and more importantly to me.<br><br>You came into my life when I was expecting the least and I'm glad I found a bestfriend first and then the love of my life.<br><br>
+
+You are a gem and you are loved no matter what you do!<br><br>
+
+Happy 24th champ!! Let's rock this life and wishing to celebrate more birthdays side by side! 💗
+
+</p>
+</div><!-- FINAL LINE (only once, correct place) --><div class="card">
+  <p style="font-size:14px;opacity:0.8;">
+    Thought of using AI and learn a few tricks to surprise you and go one level up hahahah!!💗
+  </p>
+</div></div><script>
+function check(){
+if(document.getElementById("pass").value==="17-02-2023"){
+document.getElementById("lock").style.display="none";
+document.getElementById("content").style.display="block";
+startHearts();
+}else{
+alert("Wrong password");
+}
+}
+
+function startHearts(){
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.style.left=Math.random()*100+"vw";
+heart.innerHTML="❤️";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),5000);
+},300);
+}
+
+function playMusic(){
+  const music = document.getElementById("music");
+  music.currentTime = 0;
+  music.play().catch(()=>{
+    alert("Click again to play 🎶");
+  });
+}
+
+</script><button onclick="toggleMode()" style="position:fixed;top:20px;right:20px;padding:8px 12px;border:none;border-radius:20px;background:#000;color:#fff;cursor:pointer;">🌙</button>
+
+<div id="popup">Still can’t believe I found you in office 😂💛</div><script>
+function toggleMode(){
+  document.body.classList.toggle('dark');
+}
+
+let shown=false;
+document.addEventListener("click",()=>{
+  if(!shown){
+    document.getElementById("popup").style.display="block";
+    shown=true;
+    setTimeout(()=>{
+      document.getElementById("popup").style.display="none";
+    },3000);
+  }
+});
+</script></body>
+</html>
